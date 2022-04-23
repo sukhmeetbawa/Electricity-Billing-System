@@ -15,6 +15,7 @@ public class generateBill implements showWindow {
     private JButton generateButton;
     private JButton printButton;
     private JTextArea billInfo;
+    private ResultSet getInfo;
 
     generateBill() {
         connectToMySQL getData = new connectToMySQL();
@@ -26,15 +27,15 @@ public class generateBill implements showWindow {
                 meterInput.addItem(resultSet.getString("meter"));
             }
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException exception) {
+            throw new RuntimeException(exception);
         }
         generateButton.addActionListener(e -> {
             String month = (String) monthInput.getSelectedItem();
             String meter = (String) meterInput.getSelectedItem();
             billInfo.setText("Symbiosis Power Limited\nELECTRICITY BILL FOR THE MONTH OF " + month + ", 2022\n\n\n");
             try {
-                ResultSet getInfo = getData.statement.executeQuery("select * from customer_info where meter=" + meter);
+                getInfo = getData.statement.executeQuery("select * from customer_info where meter=" + meter);
                 if (getInfo.next()) {
                     billInfo.append("Customer Name\t:\t" + getInfo.getString("name") + "\n");
                     billInfo.append("Meter Number\t:\t" + getInfo.getString("meter") + "\n");
@@ -45,7 +46,9 @@ public class generateBill implements showWindow {
                     billInfo.append("Phone Number\t:\t" + getInfo.getString("phone") + "\n");
                     billInfo.append("\n\n\n");
                 }
-
+                int amount = 0;
+                getInfo = getData.statement.executeQuery("select * from bill where meter_number='" + meter + "' and month='" + month + "'");
+                if (getInfo.next()) amount = getInfo.getInt("amount");
                 getInfo = getData.statement.executeQuery("select * from tax");
                 if (getInfo.next()) {
                     billInfo.append("Meter Location\t:\t" + getInfo.getString("meter_location") + "\n");
@@ -57,7 +60,8 @@ public class generateBill implements showWindow {
                     billInfo.append("Meter Rent\t:\t" + getInfo.getString("meter_rent") + "\n");
                     billInfo.append("MCB Rent\t:\t" + getInfo.getString("mcb_rent") + "\n");
                     billInfo.append("Service Tax\t:\t" + getInfo.getString("service_rent") + "\n");
-                    billInfo.append("GST@9%\t\t:\t" + getInfo.getString("gst") + "\n");
+                    billInfo.append("cGST@" + getInfo.getString("cgst") + "%\t\t:\t" + (getInfo.getInt("cgst") * amount / 100) + "\n");
+                    billInfo.append("sGST@" + getInfo.getString("sgst") + "%\t\t:\t" + (getInfo.getInt("sgst") * amount / 100) + "\n");
                     billInfo.append("\n\n\n");
                 }
 
@@ -68,8 +72,8 @@ public class generateBill implements showWindow {
                     billInfo.append("Units Consumed\t:\t" + getInfo.getString("units") + "\n");
                     billInfo.append("Total Charges\t:\t" + getInfo.getString("amount") + "\n");
                 }
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
+            } catch (SQLException exception) {
+                throw new RuntimeException(exception);
             }
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
@@ -79,8 +83,8 @@ public class generateBill implements showWindow {
         printButton.addActionListener(e -> {
             try {
                 billInfo.print();
-            } catch (PrinterException ex) {
-                throw new RuntimeException(ex);
+            } catch (PrinterException exception) {
+                throw new RuntimeException(exception);
             }
         });
     }

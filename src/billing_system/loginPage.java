@@ -6,26 +6,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class loginPage implements showWindow {
+public class loginPage {
     private JPanel main;
     private JTextField usernameInput;
     private JPasswordField passwordInput;
     private JButton loginButton;
     private ResultSet resultSet;
 
-    public loginPage(JFrame frame) {
+    public loginPage(JFrame frame, boolean newUser) {
         connectToMySQL connection = new connectToMySQL();
         try {
             resultSet = connection.statement.executeQuery("select * from admin_credentials");
-            if (resultSet.next())
-                loginButton.setText("Sign-in");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            if (resultSet.next()) loginButton.setText("Sign-in");
+        } catch (SQLException exception) {
+            throw new RuntimeException(exception);
         }
+        if (newUser) loginButton.setText("Add User");
         loginButton.addActionListener(actionEvent -> {
             try {
                 resultSet = connection.statement.executeQuery("select * from admin_credentials");
-                if (!(resultSet.next())) {
+                if (newUser | !(resultSet.next())) {
                     JOptionPane.showMessageDialog(main, "CREATING NEW ADMIN CREDENTIALS");
                     loginButton.setText("Sign-up");
                     String uname = usernameInput.getText();
@@ -34,9 +34,12 @@ public class loginPage implements showWindow {
                     preparedStatement.setString(1, uname);
                     preparedStatement.setString(2, passwd);
                     preparedStatement.executeUpdate();
-                    usernameInput.setText("");
-                    passwordInput.setText("");
-                    loginButton.setText("Sign-in");
+                    if (newUser) frame.setVisible(false);
+                    else {
+                        usernameInput.setText("");
+                        passwordInput.setText("");
+                        loginButton.setText("Sign-in");
+                    }
                 } else {
                     loginButton.setText("Sign-in");
                     String uname = usernameInput.getText();
@@ -54,19 +57,20 @@ public class loginPage implements showWindow {
                     } else {
                         System.out.println("Login Failed");
                         JOptionPane.showMessageDialog(main, "INVALID LOGIN");
-                        usernameInput.setText("");
-                        passwordInput.setText("");
+
                     }
                 }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+            } catch (SQLException exception) {
+                JOptionPane.showMessageDialog(main,exception.getMessage());
+                usernameInput.setText("");
+                passwordInput.setText("");
+                frame.setVisible(false);
             }
-
         });
     }
 
-    public void drawWindow(JFrame frame) {
-        frame.setContentPane(new loginPage(frame).main);
+    public void drawWindow(JFrame frame, boolean newUser) {
+        frame.setContentPane(new loginPage(frame, newUser).main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setResizable(false);
@@ -76,3 +80,4 @@ public class loginPage implements showWindow {
         frame.setVisible(true);
     }
 }
+

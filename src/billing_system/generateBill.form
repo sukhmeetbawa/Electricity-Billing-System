@@ -59,7 +59,9 @@
         <children>
           <component id="8ba88" class="javax.swing.JTextArea" binding="billInfo">
             <constraints/>
-            <properties/>
+            <properties>
+              <editable value="false"/>
+            </properties>
           </component>
         </children>
       </scrollpane>

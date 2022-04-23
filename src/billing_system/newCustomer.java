@@ -38,8 +38,8 @@ public class newCustomer implements showWindow {
                 JOptionPane.showMessageDialog(main, "NEW CUSTOMER REGISTERED");
                 frame.setVisible(false);
 
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
+            } catch (Exception exception) {
+                throw new RuntimeException(exception);
             }
         });
     }

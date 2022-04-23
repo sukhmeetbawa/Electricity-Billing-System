@@ -31,15 +31,15 @@ public class customerDetails implements showWindow {
                 data[6] = resultSet.getString("phone");
                 defaultTableModel.addRow(data);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException exception) {
+            throw new RuntimeException(exception);
         }
         printButton.requestFocus();
         printButton.addActionListener(e -> {
             try {
                 table.print();
-            } catch (PrinterException ex) {
-                throw new RuntimeException(ex);
+            } catch (PrinterException exception) {
+                throw new RuntimeException(exception);
             }
         });
     }
