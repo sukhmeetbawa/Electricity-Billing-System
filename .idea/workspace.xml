@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="add interface for windows">
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="reorganize order for JFrame commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/loginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/loginPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/loginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/loginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650717517185</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="reorganize order for JFrame commands">
+      <created>1650717950243</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650717950243</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +193,8 @@
     <MESSAGE value="customerDetails now uses Swing GUI Form" />
     <MESSAGE value="refactor and other stuff" />
     <MESSAGE value="add interface for windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="add interface for windows" />
+    <MESSAGE value="reorganize order for JFrame commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="reorganize order for JFrame commands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
