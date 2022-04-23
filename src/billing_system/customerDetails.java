@@ -1,28 +1,23 @@
 package billing_system;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.print.PrinterException;
 import java.sql.ResultSet;
 
-public class customerDetails extends JFrame implements ActionListener {
+public class customerDetails {
 
-    private final JButton printButton;
-    private final String[] headings = {"Customer Name", "Meter Number", "Address", "City", "State", "E-Mail", "Phone Number"};
-    private final String[][] data = new String[20][8];
+    private final JPanel Main;
+    private JButton printButton;
     int i = 0, j = 0;
     private JTable infoTable;
 
     customerDetails() {
-        super("Customer Details");
-        pack();
-        setSize(1200, 650);
-        setLocationRelativeTo(null);
-
         try {
             connectToMySQL connection = new connectToMySQL();
             String s1 = "select * from customer_info";
             ResultSet resultSet = connection.statement.executeQuery(s1);
+            String[][] data = new String[20][8];
             while (resultSet.next()) {
                 data[i][j++] = resultSet.getString("name");
                 data[i][j++] = resultSet.getString("meter");
@@ -34,29 +29,34 @@ public class customerDetails extends JFrame implements ActionListener {
                 i++;
                 j = 0;
             }
+            String[] headings = {"Customer Name", "Meter Number", "Address", "City", "State", "E-Mail", "Phone Number"};
             infoTable = new JTable(data, headings);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-        printButton = new JButton("Print");
-        add(printButton, "South");
-        JScrollPane sp = new JScrollPane(infoTable);
-        add(sp);
-        printButton.addActionListener(this);
+        Main = new JPanel();
+        Main.setBorder(BorderFactory.createEmptyBorder(32, 32, 32, 32));
+        JButton printButton = new JButton("Print");
+//        JScrollPane scrollPane = ;
+        Main.setLayout(new BorderLayout());
+        Main.add(new JScrollPane(infoTable));
+        Main.add(printButton, BorderLayout.SOUTH);
+        printButton.requestFocus();
+        printButton.addActionListener(e -> {
+            try {
+                infoTable.print();
+            } catch (PrinterException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 
-    public static void drawWindow() {
-        new customerDetails().setVisible(true);
+    public static void drawWindow() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        JFrame frame = new JFrame("Customer Details");
+        frame.setContentPane(new customerDetails().Main);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
-
-    public void actionPerformed(ActionEvent ae) {
-        try {
-            infoTable.print();
-        } catch (Exception e) {
-        }
-    }
-
 }

@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java_Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/mysql-connector-java-8.0.28.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/generateBill.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/generateBill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/loginPage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/loginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/mainPage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.java" afterDir="false" />
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="MVP Made">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +78,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="billing_system.mainPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="billing_system.mainPage" />
+    <configuration name="calculateBill" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="billing_system.calculateBill" />
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
@@ -107,8 +91,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="calculateBill" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="billing_system.calculateBill" />
+    <configuration name="customerDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="billing_system.customerDetail" />
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
@@ -136,10 +120,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.billing_system.loginPage" />
+        <item itemvalue="Application.customerDetail" />
         <item itemvalue="Application.generateBill" />
         <item itemvalue="Application.calculateBill" />
         <item itemvalue="Application.billing_system.customerInfo" />
-        <item itemvalue="Application.billing_system.mainPage" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +136,14 @@
       <option name="presentableId" value="Default" />
       <updated>1650536769197</updated>
     </task>
+    <task id="LOCAL-00001" summary="MVP Made">
+      <created>1650661461629</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650661461629</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,5 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="MVP Made" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVP Made" />
   </component>
 </project>

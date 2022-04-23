@@ -23,7 +23,13 @@ public class mainPage {
         });
         customerDetailsButton.addActionListener(e -> {
             System.out.println("SHOWING CUSTOMER DETAILS");
-            customerDetails.drawWindow();
+            try {
+                customerDetails.drawWindow();
+            } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            }
+
         });
         calculateButton.addActionListener(e -> {
             System.out.println("CALCULATING BILL");
