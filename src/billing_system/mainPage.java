@@ -3,7 +3,7 @@ package billing_system;
 import javax.swing.*;
 import java.awt.*;
 
-public class mainPage {
+public class mainPage implements showWindow {
 
     private JButton newCustomerButton;
     private JButton customerDetailsButton;
@@ -15,25 +15,29 @@ public class mainPage {
         newCustomerButton.addActionListener(e -> {
             System.out.println("ADDING NEW CUSTOMER");
             JOptionPane.showMessageDialog(main, "ADDING NEW CUSTOMER");
-            newCustomer.drawWindow();
+            JFrame customerFrame = new JFrame("Add Customer");
+            newCustomer newCustomer = new newCustomer(customerFrame);
+            newCustomer.drawWindow(customerFrame);
         });
         customerDetailsButton.addActionListener(e -> {
             System.out.println("SHOWING CUSTOMER DETAILS");
-            customerDetails.drawWindow();
+            customerDetails customer = new customerDetails();
+            customer.drawWindow(new JFrame("Customer Details"));
 
         });
         calculateButton.addActionListener(e -> {
             System.out.println("CALCULATING BILL");
-            calculateBill.drawWindow();
+            calculateBill calculateBill = new calculateBill();
+            calculateBill.drawWindow(new JFrame("Calculate Bill"));
         });
         generateButton.addActionListener(e -> {
             System.out.println("GENERATING BILL");
-            generateBill.drawWindow();
+            generateBill generateBill = new generateBill();
+            generateBill.drawWindow(new JFrame("Generate Bill"));
         });
     }
 
-    public static void drawWindow() {
-        JFrame frame = new JFrame("Electricity Billing System");
+    public void drawWindow(JFrame frame) {
         frame.setContentPane(new mainPage().main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

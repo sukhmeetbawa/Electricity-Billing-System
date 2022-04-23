@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.PreparedStatement;
 
-public class newCustomer {
+public class newCustomer implements showWindow {
     private JTextField nameInput;
     private JPanel main;
     private JButton submitButton;
@@ -15,7 +15,7 @@ public class newCustomer {
     private JTextField emailInput;
     private JTextField phoneInput;
 
-    public newCustomer(Frame frame) {
+    public newCustomer(JFrame frame) {
         submitButton.addActionListener(e -> {
             String name = nameInput.getText();
             String meter = meterInput.getText();
@@ -44,8 +44,7 @@ public class newCustomer {
         });
     }
 
-    public static void drawWindow() {
-        JFrame frame = new JFrame("Electricity Billing System");
+    public void drawWindow(JFrame frame) {
         frame.setContentPane(new newCustomer(frame).main);
         frame.pack();
         frame.setSize(470, 350);

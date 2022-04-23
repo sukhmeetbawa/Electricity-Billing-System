@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
-public class generateBill {
+public class generateBill implements showWindow {
     private JComboBox<String> meterInput;
     private JComboBox<String> monthInput;
     private JPanel main;
@@ -85,8 +85,7 @@ public class generateBill {
         });
     }
 
-    public static void drawWindow() {
-        JFrame frame = new JFrame("Electricity Billing System");
+    public void drawWindow(JFrame frame) {
         frame.setContentPane(new generateBill().main);
         frame.pack();
         frame.setSize(470, 700);

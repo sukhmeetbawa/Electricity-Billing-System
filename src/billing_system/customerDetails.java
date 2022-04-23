@@ -7,7 +7,7 @@ import java.awt.print.PrinterException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class customerDetails {
+public class customerDetails implements showWindow {
     DefaultTableModel defaultTableModel = new DefaultTableModel();
     String[] header = new String[]{"Customer Name", "Meter Number", "Address", "City", "State", "E-Mail", "Phone Number"};
     String[] data = new String[7];
@@ -44,13 +44,12 @@ public class customerDetails {
         });
     }
 
-    public static void drawWindow() {
-        JFrame frame = new JFrame("Customer Details");
+    public void drawWindow(JFrame frame) {
         frame.setContentPane(new customerDetails().main);
         frame.pack();
-        frame.setVisible(true);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);
+        frame.setVisible(true);
     }
 }

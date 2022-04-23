@@ -5,7 +5,7 @@ import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class calculateBill {
+public class calculateBill implements showWindow {
     private JPanel main;
     private JComboBox<String> meterMenu;
     private JComboBox<String> monthMenu;
@@ -44,8 +44,7 @@ public class calculateBill {
         });
     }
 
-    public static void drawWindow() {
-        JFrame frame = new JFrame("Electricity Billing System");
+    public void drawWindow(JFrame frame) {
         frame.setContentPane(new calculateBill().main);
         frame.pack();
         frame.setSize(470, 350);

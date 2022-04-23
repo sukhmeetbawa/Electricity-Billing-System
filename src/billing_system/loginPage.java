@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class loginPage {
+public class loginPage implements showWindow {
     private JPanel main;
     private JTextField usernameInput;
     private JPasswordField passwordInput;
@@ -26,7 +26,8 @@ public class loginPage {
                     System.out.println("Login Successful");
                     frame.setVisible(false);
                     JOptionPane.showMessageDialog(main, "LOGIN SUCCESSFUL");
-                    mainPage.drawWindow();
+                    mainPage mainPage = new mainPage();
+                    mainPage.drawWindow(new JFrame("Electricity Billing System"));
                 } else {
                     System.out.println("Login Failed");
                     JOptionPane.showMessageDialog(main, "INVALID LOGIN");
@@ -38,8 +39,7 @@ public class loginPage {
         });
     }
 
-    public static void drawWindow() {
-        JFrame frame = new JFrame("Electricity Billing System");
+    public void drawWindow(JFrame frame) {
         frame.setContentPane(new loginPage(frame).main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
