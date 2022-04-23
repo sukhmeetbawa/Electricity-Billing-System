@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="MVP Made">
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="customerDetails Now Looks like other windows">
+      <change afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="billing_system.*" />
+          <option name="PATTERN" value="billing_system.customerDetails" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,7 +69,7 @@
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="billing_system.*" />
+          <option name="PATTERN" value="billing_system.customerDetails" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,7 +82,7 @@
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="billing_system.*" />
+          <option name="PATTERN" value="billing_system.customerDetails" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,12 +90,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="customerDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="billing_system.customerDetail" />
+    <configuration name="customerDetails" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="billing_system.customerDetails" />
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="billing_system.*" />
+          <option name="PATTERN" value="billing_system.customerDetails" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,7 +108,7 @@
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="billing_system.*" />
+          <option name="PATTERN" value="billing_system.customerDetails" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,9 +119,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.billing_system.loginPage" />
-        <item itemvalue="Application.customerDetail" />
-        <item itemvalue="Application.generateBill" />
-        <item itemvalue="Application.calculateBill" />
+        <item itemvalue="Application.customerDetails" />
+        <item itemvalue="Application.billing_system.generateBill" />
+        <item itemvalue="Application.billing_system.calculateBill" />
         <item itemvalue="Application.billing_system.customerInfo" />
       </list>
     </recent_temporary>
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650661461629</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="customerDetails Now Looks like other windows">
+      <created>1650698441454</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650698441455</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +166,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="MVP Made" />
-    <option name="LAST_COMMIT_MESSAGE" value="MVP Made" />
+    <MESSAGE value="customerDetails Now Looks like other windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="customerDetails Now Looks like other windows" />
   </component>
 </project>

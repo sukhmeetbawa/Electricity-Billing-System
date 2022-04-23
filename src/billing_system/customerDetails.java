@@ -1,50 +1,41 @@
 package billing_system;
 
 import javax.swing.*;
-import java.awt.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.print.PrinterException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class customerDetails {
-
-    private final JPanel Main;
+    DefaultTableModel defaultTableModel = new DefaultTableModel();
+    String[] header = new String[]{"Customer Name", "Meter Number", "Address", "City", "State", "E-Mail", "Phone Number"};
+    String[] data = new String[7];
+    private JPanel main;
     private JButton printButton;
-    int i = 0, j = 0;
-    private JTable infoTable;
+    private JTable table;
 
-    customerDetails() {
+    public customerDetails() {
+        defaultTableModel.setColumnIdentifiers(header);
+        table.setModel(defaultTableModel);
+        connectToMySQL connection = new connectToMySQL();
         try {
-            connectToMySQL connection = new connectToMySQL();
-            String s1 = "select * from customer_info";
-            ResultSet resultSet = connection.statement.executeQuery(s1);
-            String[][] data = new String[20][8];
+            ResultSet resultSet = connection.statement.executeQuery("select * from customer_info");
             while (resultSet.next()) {
-                data[i][j++] = resultSet.getString("name");
-                data[i][j++] = resultSet.getString("meter");
-                data[i][j++] = resultSet.getString("address");
-                data[i][j++] = resultSet.getString("city");
-                data[i][j++] = resultSet.getString("state");
-                data[i][j++] = resultSet.getString("email");
-                data[i][j++] = resultSet.getString("phone");
-                i++;
-                j = 0;
+                data[0] = resultSet.getString("name");
+                data[1] = resultSet.getString("meter");
+                data[2] = resultSet.getString("address");
+                data[3] = resultSet.getString("city");
+                data[4] = resultSet.getString("state");
+                data[5] = resultSet.getString("email");
+                data[6] = resultSet.getString("phone");
+                defaultTableModel.addRow(data);
             }
-            String[] headings = {"Customer Name", "Meter Number", "Address", "City", "State", "E-Mail", "Phone Number"};
-            infoTable = new JTable(data, headings);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-        Main = new JPanel();
-        Main.setBorder(BorderFactory.createEmptyBorder(32, 32, 32, 32));
-        JButton printButton = new JButton("Print");
-//        JScrollPane scrollPane = ;
-        Main.setLayout(new BorderLayout());
-        Main.add(new JScrollPane(infoTable));
-        Main.add(printButton, BorderLayout.SOUTH);
-        printButton.requestFocus();
         printButton.addActionListener(e -> {
             try {
-                infoTable.print();
+                table.print();
             } catch (PrinterException ex) {
                 throw new RuntimeException(ex);
             }
@@ -54,7 +45,7 @@ public class customerDetails {
     public static void drawWindow() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         JFrame frame = new JFrame("Customer Details");
-        frame.setContentPane(new customerDetails().Main);
+        frame.setContentPane(new customerDetails().main);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
