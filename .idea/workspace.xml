@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="refactor and other stuff">
-      <change afterPath="$PROJECT_DIR$/src/billing_system/showWindow.java" afterDir="false" />
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="add interface for windows">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/loginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/loginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/newCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/loginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/loginPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650705714820</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add interface for windows">
+      <created>1650717517185</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650717517185</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,7 +189,8 @@
     <MESSAGE value="customerDetails Now Looks like other windows" />
     <MESSAGE value="customerDetails now uses Swing GUI Form" />
     <MESSAGE value="refactor and other stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor and other stuff" />
+    <MESSAGE value="add interface for windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="add interface for windows" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

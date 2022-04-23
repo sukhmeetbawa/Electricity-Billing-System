@@ -90,8 +90,8 @@ public class generateBill implements showWindow {
         frame.pack();
         frame.setSize(470, 700);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);
+        frame.setVisible(true);
     }
 }

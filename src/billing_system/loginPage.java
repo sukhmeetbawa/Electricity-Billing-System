@@ -45,8 +45,8 @@ public class loginPage implements showWindow {
         frame.pack();
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lock.png");
         frame.setIconImage(imageIcon);
+        frame.setVisible(true);
     }
 }

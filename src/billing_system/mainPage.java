@@ -44,8 +44,8 @@ public class mainPage implements showWindow {
         frame.setSize(400, 250);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);
+        frame.setVisible(true);
     }
 }

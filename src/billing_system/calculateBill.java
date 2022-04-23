@@ -45,13 +45,13 @@ public class calculateBill implements showWindow {
     }
 
     public void drawWindow(JFrame frame) {
+        frame.setSize(470, 350);
         frame.setContentPane(new calculateBill().main);
         frame.pack();
-        frame.setSize(470, 350);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);
+        frame.setVisible(true);
     }
 }
