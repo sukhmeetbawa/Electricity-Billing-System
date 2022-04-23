@@ -1,13 +1,14 @@
 package billing_system;
 
 import javax.swing.*;
+import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class calculateBill {
-    private JPanel Main;
-    private JComboBox meterMenu;
-    private JComboBox monthMenu;
+    private JPanel main;
+    private JComboBox<String> meterMenu;
+    private JComboBox<String> monthMenu;
     private JTextField unitsConsumed;
     private JButton calculateButton;
 
@@ -26,10 +27,14 @@ public class calculateBill {
             String units = unitsConsumed.getText();
             String month = (String) monthMenu.getSelectedItem();
             int unitsInInteger = Integer.parseInt(units);
-            int multiplier = unitsInInteger * 7;
-            int amount = multiplier + 50 + 12 + 102 + 20 + 50;
+            int charges = unitsInInteger * 7;
+            int amount = 0;
             try {
                 connectToMySQL setData = new connectToMySQL();
+                ResultSet resultSet = setData.statement.executeQuery("select * from tax");
+                if (resultSet.next()) {
+                    amount = charges + resultSet.getInt("meter_rent") + resultSet.getInt("service_rent") + resultSet.getInt("gst") + resultSet.getInt("mcb_rent");
+                }
                 setData.statement.executeUpdate("insert into bill(meter_number,month,units,amount)values('" + meterNumber + "','" + month + "','" + units + "','" + amount + "')");
                 JOptionPane.showMessageDialog(null, "Bill Updated");
             } catch (SQLException ex) {
@@ -39,14 +44,15 @@ public class calculateBill {
         });
     }
 
-    public static void drawWindow() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    public static void drawWindow() {
         JFrame frame = new JFrame("Electricity Billing System");
-        frame.setContentPane(new calculateBill().Main);
+        frame.setContentPane(new calculateBill().main);
         frame.pack();
         frame.setSize(470, 350);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
+        frame.setIconImage(imageIcon);
     }
 }

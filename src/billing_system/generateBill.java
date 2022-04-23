@@ -1,14 +1,17 @@
 package billing_system;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.print.PrinterException;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 
 public class generateBill {
     private JComboBox<String> meterInput;
-    private JComboBox monthInput;
-    private JPanel Main;
+    private JComboBox<String> monthInput;
+    private JPanel main;
     private JButton generateButton;
     private JButton printButton;
     private JTextArea billInfo;
@@ -29,7 +32,7 @@ public class generateBill {
         generateButton.addActionListener(e -> {
             String month = (String) monthInput.getSelectedItem();
             String meter = (String) meterInput.getSelectedItem();
-            billInfo.setText("Reliance Power Limited\nELECTRICITY BILL FOR THE MONTH OF " + month + ", 2022\n\n\n");
+            billInfo.setText("Symbiosis Power Limited\nELECTRICITY BILL FOR THE MONTH OF " + month + ", 2022\n\n\n");
             try {
                 ResultSet getInfo = getData.statement.executeQuery("select * from customer_info where meter=" + meter);
                 if (getInfo.next()) {
@@ -69,6 +72,9 @@ public class generateBill {
                 throw new RuntimeException(ex);
             }
 
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+            Date date = new Date(System.currentTimeMillis());
+            billInfo.append("BILL GENERATED ON " + formatter.format(date));
         });
         printButton.addActionListener(e -> {
             try {
@@ -79,13 +85,14 @@ public class generateBill {
         });
     }
 
-    public static void drawWindow() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    public static void drawWindow() {
         JFrame frame = new JFrame("Electricity Billing System");
-        frame.setContentPane(new generateBill().Main);
+        frame.setContentPane(new generateBill().main);
         frame.pack();
         frame.setSize(470, 700);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
+        frame.setIconImage(imageIcon);
     }
 }

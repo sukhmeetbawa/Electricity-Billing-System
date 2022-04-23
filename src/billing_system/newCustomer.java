@@ -6,24 +6,24 @@ import java.sql.PreparedStatement;
 
 public class newCustomer {
     private JTextField nameInput;
-    private JPanel Main;
+    private JPanel main;
     private JButton submitButton;
-    private JTextField meternoInput;
+    private JTextField meterInput;
     private JTextField addressInput;
     private JTextField cityInput;
     private JTextField stateInput;
     private JTextField emailInput;
-    private JTextField phonenoInput;
+    private JTextField phoneInput;
 
     public newCustomer(Frame frame) {
         submitButton.addActionListener(e -> {
             String name = nameInput.getText();
-            String meter = meternoInput.getText();
+            String meter = meterInput.getText();
             String address = addressInput.getText();
-            String city = stateInput.getText();
-            String state = cityInput.getText();
+            String city = cityInput.getText();
+            String state = stateInput.getText();
             String email = emailInput.getText();
-            String phone = phonenoInput.getText();
+            String phone = phoneInput.getText();
             try {
                 connectToMySQL connection = new connectToMySQL();
                 PreparedStatement preparedStatement = connection.connection.prepareStatement("insert into customer_info(name,meter,address,city,state,email,phone)values( ?, ?, ?, ?, ?, ?, ?)");
@@ -35,7 +35,7 @@ public class newCustomer {
                 preparedStatement.setString(6, email);
                 preparedStatement.setString(7, phone);
                 preparedStatement.executeUpdate();
-                JOptionPane.showMessageDialog(Main, "NEW CUSTOMER REGISTERED");
+                JOptionPane.showMessageDialog(main, "NEW CUSTOMER REGISTERED");
                 frame.setVisible(false);
 
             } catch (Exception ex) {
@@ -44,14 +44,15 @@ public class newCustomer {
         });
     }
 
-    public static void drawWindow() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    public static void drawWindow() {
         JFrame frame = new JFrame("Electricity Billing System");
-        frame.setContentPane(new newCustomer(frame).Main);
+        frame.setContentPane(new newCustomer(frame).main);
         frame.pack();
         frame.setSize(470, 350);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
+        frame.setIconImage(imageIcon);
     }
 }

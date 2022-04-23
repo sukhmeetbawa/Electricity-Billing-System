@@ -2,6 +2,7 @@ package billing_system;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.print.PrinterException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,6 +34,7 @@ public class customerDetails {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        printButton.requestFocus();
         printButton.addActionListener(e -> {
             try {
                 table.print();
@@ -42,12 +44,13 @@ public class customerDetails {
         });
     }
 
-    public static void drawWindow() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    public static void drawWindow() {
         JFrame frame = new JFrame("Customer Details");
         frame.setContentPane(new customerDetails().main);
         frame.pack();
         frame.setVisible(true);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
+        frame.setIconImage(imageIcon);
     }
 }
