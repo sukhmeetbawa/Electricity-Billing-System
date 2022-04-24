@@ -36,7 +36,9 @@ public class generateBill implements showWindow {
             billInfo.setText("Symbiosis Power Limited\nELECTRICITY BILL FOR THE MONTH OF " + month + ", 2022\n\n\n");
             try {
                 getInfo = getData.statement.executeQuery("select * from customer_info where meter=" + meter);
+                String state = "";
                 if (getInfo.next()) {
+                    state = getInfo.getString("state");
                     billInfo.append("Customer Name\t:\t" + getInfo.getString("name") + "\n");
                     billInfo.append("Meter Number\t:\t" + getInfo.getString("meter") + "\n");
                     billInfo.append("Address\t\t:\t" + getInfo.getString("address") + "\n");
@@ -49,7 +51,7 @@ public class generateBill implements showWindow {
                 int amount = 0;
                 getInfo = getData.statement.executeQuery("select * from bill where meter_number='" + meter + "' and month='" + month + "'");
                 if (getInfo.next()) amount = getInfo.getInt("amount");
-                getInfo = getData.statement.executeQuery("select * from tax");
+                getInfo = getData.statement.executeQuery("select * from tax where place='" + state + "'");
                 if (getInfo.next()) {
                     billInfo.append("Meter Location\t:\t" + getInfo.getString("meter_location") + "\n");
                     billInfo.append("Meter Type\t:\t" + getInfo.getString("meter_type") + "\n");
