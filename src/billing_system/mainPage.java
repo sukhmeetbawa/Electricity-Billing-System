@@ -2,8 +2,6 @@ package billing_system;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class mainPage implements showWindow {
 
@@ -43,7 +41,7 @@ public class mainPage implements showWindow {
             loginPage.drawWindow(new JFrame("New Admin"),true);
         });
         changeTaxesButton.addActionListener(e -> {
-            taxEditor taxEditor = new taxEditor(null);
+            taxInput taxEditor = new taxInput(null);
             taxEditor.drawWindow(new JFrame("Tax Editor"));
         });
     }

@@ -2,6 +2,7 @@ package billing_system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -23,6 +24,7 @@ public class calculateBill implements showWindow {
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
         }
+
         calculateButton.addActionListener(e -> {
             String meterNumber = (String) meterMenu.getSelectedItem();
             String units = unitsConsumed.getText();
@@ -31,23 +33,27 @@ public class calculateBill implements showWindow {
             int amount = 0;
             try {
                 connectToMySQL setData = new connectToMySQL();
-                resultSet = setData.statement.executeQuery("select * from bill where meter_number='" + meterNumber + "' and month='" + month + "'");
-                if (resultSet.next()) {
-                    JOptionPane.showMessageDialog(main, "ENTRY EXISTS");
-                    meterMenu.setSelectedIndex(0);
-                    monthMenu.setSelectedIndex(0);
-                    unitsConsumed.setText("");
-                } else {
-                    resultSet = setData.statement.executeQuery("select * from customer_info where meter='" + meterNumber + "'");
-                    if (resultSet.next()) {
-                        resultSet = setData.statement.executeQuery("select * from tax where place='" + resultSet.getString("state") + "'");
-                    }
-                    if (resultSet.next()) {
-                        amount = unitsInInteger * resultSet.getInt("unit_rate") + resultSet.getInt("meter_rent") + resultSet.getInt("service_rent") + resultSet.getInt("mcb_rent");
-                        int cgst = amount * resultSet.getInt("cgst") / 100;
-                        int sgst = amount * resultSet.getInt("sgst") / 100;
+                ResultSet tax = setData.statement.executeQuery("select * from customer_info where meter='" + meterNumber + "'");
+                if (tax.next()) {
+                    tax = setData.statement.executeQuery("select * from tax where place='" + tax.getString("state") + "'");
+                    if (tax.next()) {
+                        amount = unitsInInteger * tax.getInt("unit_rate") + tax.getInt("meter_rate") + tax.getInt("service_rent") + tax.getInt("mcb_rent");
+                        int cgst = amount * tax.getInt("cgst") / 100;
+                        int sgst = amount * tax.getInt("sgst") / 100;
                         amount = amount + cgst + sgst;
                     }
+                }
+                resultSet = setData.statement.executeQuery("select * from bill where meter_number='" + meterNumber + "' and month='" + month + "'");
+                if (resultSet.next()) {
+                    PreparedStatement preparedStatement = getData.connection.prepareStatement("update bill set units = ?,amount = ? where meter_number = ? and month = ?");
+                    preparedStatement.setString(1,units);
+                    preparedStatement.setInt(2,amount);
+                    preparedStatement.setString(3,meterNumber);
+                    preparedStatement.setString(4,month);
+                    preparedStatement.executeUpdate();
+                    JOptionPane.showMessageDialog(main, "ENTRY UPDATED");
+                    frame.setVisible(false);
+                } else {
                     setData.statement.executeUpdate("insert into bill(meter_number,month,units,amount)values('" + meterNumber + "','" + month + "','" + units + "','" + amount + "')");
                     JOptionPane.showMessageDialog(main, "ENTRY ADDED");
                     frame.setVisible(false);

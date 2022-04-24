@@ -57,7 +57,7 @@ public class generateBill implements showWindow {
                     billInfo.append("Bill Type\t:\t" + getInfo.getString("bill_type") + "\n");
                     billInfo.append("Days\t\t:\t" + getInfo.getString("days") + "\n");
                     billInfo.append("\n\n\n");
-                    billInfo.append("Meter Rent\t:\t" + getInfo.getString("meter_rent") + "\n");
+                    billInfo.append("Meter Rent\t:\t" + getInfo.getString("meter_rate") + "\n");
                     billInfo.append("MCB Rent\t:\t" + getInfo.getString("mcb_rent") + "\n");
                     billInfo.append("Service Tax\t:\t" + getInfo.getString("service_rent") + "\n");
                     billInfo.append("cGST@" + getInfo.getString("cgst") + "%\t\t:\t" + (getInfo.getInt("cgst") * amount / 100) + "\n");
