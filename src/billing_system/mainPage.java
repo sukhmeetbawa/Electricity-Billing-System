@@ -41,7 +41,7 @@ public class mainPage implements showWindow {
             loginPage.drawWindow(new JFrame("New Admin"),true);
         });
         changeTaxesButton.addActionListener(e -> {
-            taxInput taxEditor = new taxInput(null);
+            taxEditor taxEditor = new taxEditor(null);
             taxEditor.drawWindow(new JFrame("Tax Editor"));
         });
     }

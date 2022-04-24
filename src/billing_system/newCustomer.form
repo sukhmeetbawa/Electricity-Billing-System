@@ -112,16 +112,6 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="fcd02" class="javax.swing.JTextField" binding="stateInput">
-        <constraints>
-          <grid row="5" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value=""/>
-        </properties>
-      </component>
       <component id="638cd" class="javax.swing.JTextField" binding="emailInput">
         <constraints>
           <grid row="6" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
@@ -144,6 +134,52 @@
         </constraints>
         <properties>
           <text value="Submit"/>
+        </properties>
+      </component>
+      <component id="3fe1b" class="javax.swing.JComboBox" binding="stateInput">
+        <constraints>
+          <grid row="5" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="SELECT STATE"/>
+            <item value="Andaman and Nicobar (UT)"/>
+            <item value="Andhra Pradesh"/>
+            <item value="Arunachal Pradesh"/>
+            <item value="Assam"/>
+            <item value="Bihar"/>
+            <item value="Chandigarh (UT)&#9;"/>
+            <item value="Chhattisgarh"/>
+            <item value="Dadra and Nagar Haveli (UT)&#9;"/>
+            <item value="Daman and Diu (UT)"/>
+            <item value="Delhi"/>
+            <item value="Goa"/>
+            <item value="Gujarat"/>
+            <item value="Haryana"/>
+            <item value="Himachal Pradesh&#9;"/>
+            <item value="Jammu and Kashmir"/>
+            <item value="Jharkhand"/>
+            <item value="Karnataka"/>
+            <item value="Kerala"/>
+            <item value="Lakshadweep (UT)&#9;"/>
+            <item value="Madhya Pradesh"/>
+            <item value="Maharashtra"/>
+            <item value="Manipur"/>
+            <item value="Meghalaya"/>
+            <item value="Mizoram"/>
+            <item value="Nagaland"/>
+            <item value="Orissa"/>
+            <item value="Puducherry (UT)"/>
+            <item value="Punjab"/>
+            <item value="Rajasthan"/>
+            <item value="Sikkim"/>
+            <item value="Tamil Nadu"/>
+            <item value="Telangana"/>
+            <item value="Tripura"/>
+            <item value="Uttar Pradesh"/>
+            <item value="Uttarakhand"/>
+            <item value="West Bengal"/>
+          </model>
         </properties>
       </component>
     </children>

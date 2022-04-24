@@ -5,9 +5,8 @@ import java.awt.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
 
-public class taxInput implements showWindow {
+public class taxEditor implements showWindow {
     private JPanel main;
     private JComboBox<String> placeSelector;
     private JTextField unitRateInput;
@@ -18,7 +17,8 @@ public class taxInput implements showWindow {
     private JTextField mcbRentInput;
     private JButton submitButton;
 
-    taxInput(JFrame frame) {
+    taxEditor(JFrame frame) {
+        placeSelector.requestFocus();
         connectToMySQL getData = new connectToMySQL();
         // Populate the Drop Menu for States
         placeSelector.addItem("SELECT STATE");
@@ -29,8 +29,9 @@ public class taxInput implements showWindow {
             throw new RuntimeException(exception);
         }
         submitButton.addActionListener(e -> {
-            try {
-                if (!Objects.equals(placeSelector.getSelectedItem(), "SELECT STATE")) {
+            if (placeSelector.getSelectedIndex() != 0) {
+                try {
+
                     ResultSet tax = getData.statement.executeQuery("select * from tax where place='" + placeSelector.getSelectedItem() + "'");
                     if (tax.next()) {
                         PreparedStatement preparedStatement = getData.connection.prepareStatement("update tax set unit_rate = ?, meter_rent = ?, service_rent = ?, cgst = ?, sgst = ?, mcb_rent = ? where place = ?");
@@ -54,9 +55,12 @@ public class taxInput implements showWindow {
                         preparedStatement.executeUpdate();
                     }
                     frame.setVisible(false);
+
+                } catch (SQLException exception) {
+                    throw new RuntimeException(exception);
                 }
-            } catch (SQLException exception) {
-                throw new RuntimeException(exception);
+            }else {
+                JOptionPane.showMessageDialog(main,"Select State First");
             }
         });
         placeSelector.addActionListener(e -> {
@@ -69,6 +73,7 @@ public class taxInput implements showWindow {
                     cGSTInput.setText(tax.getString("cgst"));
                     sGSTInput.setText(tax.getString("sgst"));
                     mcbRentInput.setText(tax.getString("mcb_rent"));
+                    submitButton.setText("Update");
                 } else {
                     unitRateInput.setText("");
                     meterRateInput.setText("");
@@ -76,6 +81,7 @@ public class taxInput implements showWindow {
                     cGSTInput.setText("");
                     sGSTInput.setText("");
                     mcbRentInput.setText("");
+                    submitButton.setText("Submit");
                 }
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -86,7 +92,7 @@ public class taxInput implements showWindow {
 
     @Override
     public void drawWindow(JFrame frame) {
-        frame.setContentPane(new taxInput(frame).main);
+        frame.setContentPane(new taxEditor(frame).main);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setSize(400, 500);

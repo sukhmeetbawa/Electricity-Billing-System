@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="made tax editor less useless and calculate bill smart">
-      <change afterPath="$PROJECT_DIR$/src/billing_system/setupDatabase.java" afterDir="false" />
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="Added a class to set all the databases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/taxInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/newCustomer.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/newCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/taxInput.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxEditor.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/taxInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxEditor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +107,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="taxInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="billing_system.taxInput" />
+    <configuration name="taxEditor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="billing_system.taxEditor" />
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
@@ -122,7 +125,6 @@
         <item itemvalue="Application.mainProgram" />
         <item itemvalue="Application.billing_system.setupDatabase" />
         <item itemvalue="Application.billing_system.setupDatabase" />
-        <item itemvalue="Application.billing_system.taxInput" />
         <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
@@ -199,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650800691760</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added a class to set all the databases">
+      <created>1650803221715</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1650803221715</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,7 +233,8 @@
     <MESSAGE value="add initial sign-up option if no admin exists in database" />
     <MESSAGE value="add 2 new option in main menu" />
     <MESSAGE value="made tax editor less useless and calculate bill smart" />
-    <option name="LAST_COMMIT_MESSAGE" value="made tax editor less useless and calculate bill smart" />
+    <MESSAGE value="Added a class to set all the databases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a class to set all the databases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -237,6 +247,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Java_Project$mainProgram.ic" NAME="mainProgram Coverage Results" MODIFIED="1650794489190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Java_Project$mainProgram.ic" NAME="mainProgram Coverage Results" MODIFIED="1650805675471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
