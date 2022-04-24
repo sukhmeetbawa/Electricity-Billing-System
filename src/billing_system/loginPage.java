@@ -76,6 +76,7 @@ public class loginPage {
         frame.pack();
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.setSize(400,250);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lock.png");
         frame.setIconImage(imageIcon);
         frame.setVisible(true);

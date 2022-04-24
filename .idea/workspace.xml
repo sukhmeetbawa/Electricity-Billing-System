@@ -5,12 +5,37 @@
       <artifact name="Java_Project:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="Project Done from my side">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Project_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="papercut fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Java_Project_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Project_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/loginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/loginPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/loginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/loginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/newCustomer.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/newCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/setupDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/setupDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/showWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/showWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/taxEditor.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxEditor.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/taxEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainProgram.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +52,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/billing_system/setupDatabase.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/mainProgram.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,11 +76,11 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "last_opened_file_path": "D:/Downloads/Electricity_Billing_System",
-    "project.structure.last.edited": "Artifacts",
+    "last_opened_file_path": "/mnt/data/Code/Java/Java_Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -215,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650808083233</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="papercut fixes">
+      <created>1650809887676</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1650809887676</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +278,8 @@
     <MESSAGE value="made tax editor less useless and calculate bill smart" />
     <MESSAGE value="Added a class to set all the databases" />
     <MESSAGE value="Project Done from my side" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project Done from my side" />
+    <MESSAGE value="papercut fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="papercut fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

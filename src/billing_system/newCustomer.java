@@ -52,8 +52,8 @@ public class newCustomer implements showWindow {
     public void drawWindow(JFrame frame) {
         frame.setContentPane(new newCustomer(frame).main);
         frame.pack();
-        frame.setSize(470, 350);
-        frame.setResizable(false);
+        frame.setSize(600, 600);
+//        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);
