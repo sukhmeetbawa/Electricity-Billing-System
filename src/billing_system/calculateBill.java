@@ -37,7 +37,7 @@ public class calculateBill implements showWindow {
                 if (tax.next()) {
                     tax = setData.statement.executeQuery("select * from tax where place='" + tax.getString("state") + "'");
                     if (tax.next()) {
-                        amount = unitsInInteger * tax.getInt("unit_rate") + tax.getInt("meter_rate") + tax.getInt("service_rent") + tax.getInt("mcb_rent");
+                        amount = unitsInInteger * tax.getInt("unit_rate") + tax.getInt("meter_rent") + tax.getInt("service_rent") + tax.getInt("mcb_rent");
                         int cgst = amount * tax.getInt("cgst") / 100;
                         int sgst = amount * tax.getInt("sgst") / 100;
                         amount = amount + cgst + sgst;

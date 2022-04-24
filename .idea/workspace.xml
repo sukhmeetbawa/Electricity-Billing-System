@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="add 2 new option in main menu">
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="made tax editor less useless and calculate bill smart">
+      <change afterPath="$PROJECT_DIR$/src/billing_system/setupDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/taxEditor.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxInput.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/taxEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/taxInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +64,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="billing_system.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="billing_system.Main" />
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="billing_system.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,21 +77,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="billing_system.taxInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="billing_system.taxInput" />
-      <module name="Java_Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="billing_system.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="billing_system.test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="billing_system.test" />
+    <configuration name="billing_system.setupDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="billing_system.setupDatabase" />
       <module name="Java_Project" />
       <extension name="coverage">
         <pattern>
@@ -110,9 +97,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="setupDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="setupDatabase" />
+      <module name="Java_Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="taxInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="billing_system.taxInput" />
+      <module name="Java_Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.mainProgram" />
+        <item itemvalue="Application.billing_system.setupDatabase" />
+        <item itemvalue="Application.billing_system.setupDatabase" />
         <item itemvalue="Application.billing_system.taxInput" />
         <item itemvalue="Application.Main (1)" />
       </list>
@@ -183,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650739912912</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="made tax editor less useless and calculate bill smart">
+      <created>1650800691760</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650800691760</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +223,8 @@
     <MESSAGE value="reorganize order for JFrame commands" />
     <MESSAGE value="add initial sign-up option if no admin exists in database" />
     <MESSAGE value="add 2 new option in main menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 2 new option in main menu" />
+    <MESSAGE value="made tax editor less useless and calculate bill smart" />
+    <option name="LAST_COMMIT_MESSAGE" value="made tax editor less useless and calculate bill smart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

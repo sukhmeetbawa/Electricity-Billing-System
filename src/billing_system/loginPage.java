@@ -39,6 +39,7 @@ public class loginPage {
                         usernameInput.setText("");
                         passwordInput.setText("");
                         loginButton.setText("Sign-in");
+                        usernameInput.requestFocus();
                     }
                 } else {
                     loginButton.setText("Sign-in");

@@ -33,7 +33,7 @@ public class taxInput implements showWindow {
                 if (!Objects.equals(placeSelector.getSelectedItem(), "SELECT STATE")) {
                     ResultSet tax = getData.statement.executeQuery("select * from tax where place='" + placeSelector.getSelectedItem() + "'");
                     if (tax.next()) {
-                        PreparedStatement preparedStatement = getData.connection.prepareStatement("update tax set unit_rate = ?, meter_rate = ?, service_rent = ?, cgst = ?, sgst = ?, mcb_rent = ? where place = ?");
+                        PreparedStatement preparedStatement = getData.connection.prepareStatement("update tax set unit_rate = ?, meter_rent = ?, service_rent = ?, cgst = ?, sgst = ?, mcb_rent = ? where place = ?");
                         preparedStatement.setInt(1, Integer.parseInt(unitRateInput.getText()));
                         preparedStatement.setInt(2, Integer.parseInt(meterRateInput.getText()));
                         preparedStatement.setInt(3, Integer.parseInt(serviceRentInput.getText()));
@@ -43,7 +43,7 @@ public class taxInput implements showWindow {
                         preparedStatement.setString(7, String.valueOf(placeSelector.getSelectedItem()));
                         preparedStatement.executeUpdate();
                     } else {
-                        PreparedStatement preparedStatement = getData.connection.prepareStatement("insert into tax(unit_rate, meter_rate, service_rent, cgst, sgst, mcb_rent, place)values(?,?,?,?,?,?,?)");
+                        PreparedStatement preparedStatement = getData.connection.prepareStatement("insert into tax(unit_rate, meter_rent, service_rent, cgst, sgst, mcb_rent, place)values(?,?,?,?,?,?,?)");
                         preparedStatement.setInt(1, Integer.parseInt(unitRateInput.getText()));
                         preparedStatement.setInt(2, Integer.parseInt(meterRateInput.getText()));
                         preparedStatement.setInt(3, Integer.parseInt(serviceRentInput.getText()));
@@ -64,7 +64,7 @@ public class taxInput implements showWindow {
                 ResultSet tax = getData.statement.executeQuery("select * from tax where place='" + placeSelector.getSelectedItem() + "'");
                 if (tax.next()) {
                     unitRateInput.setText(tax.getString("unit_rate"));
-                    meterRateInput.setText(tax.getString("meter_rate"));
+                    meterRateInput.setText(tax.getString("meter_rent"));
                     serviceRentInput.setText(tax.getString("service_rent"));
                     cGSTInput.setText(tax.getString("cgst"));
                     sGSTInput.setText(tax.getString("sgst"));
