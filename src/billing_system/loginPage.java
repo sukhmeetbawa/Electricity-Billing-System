@@ -17,11 +17,13 @@ public class loginPage {
         connectToMySQL connection = new connectToMySQL();
         try {
             resultSet = connection.statement.executeQuery("select * from admin_credentials");
-            if (resultSet.next()) loginButton.setText("Sign-in");
+            if (resultSet.next())
+                loginButton.setText("Sign-in");
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
         }
-        if (newUser) loginButton.setText("Add User");
+        if (newUser)
+            loginButton.setText("Add User");
         loginButton.addActionListener(actionEvent -> {
             try {
                 resultSet = connection.statement.executeQuery("select * from admin_credentials");
@@ -29,12 +31,14 @@ public class loginPage {
                     JOptionPane.showMessageDialog(main, "CREATING NEW ADMIN CREDENTIALS");
                     loginButton.setText("Sign-up");
                     String uname = usernameInput.getText();
-                    PreparedStatement preparedStatement = connection.connection.prepareStatement("insert into admin_credentials(username,password) values(?,?)");
+                    PreparedStatement preparedStatement = connection.connection
+                            .prepareStatement("insert into admin_credentials(username,password) values(?,?)");
                     String passwd = String.valueOf(passwordInput.getPassword());
                     preparedStatement.setString(1, uname);
                     preparedStatement.setString(2, passwd);
                     preparedStatement.executeUpdate();
-                    if (newUser) frame.setVisible(false);
+                    if (newUser)
+                        frame.setVisible(false);
                     else {
                         usernameInput.setText("");
                         passwordInput.setText("");
@@ -45,7 +49,8 @@ public class loginPage {
                     loginButton.setText("Sign-in");
                     String uname = usernameInput.getText();
                     String passwd = String.valueOf(passwordInput.getPassword());
-                    PreparedStatement preparedStatement = connection.connection.prepareStatement("select * from admin_credentials where username = ? and password = ?");
+                    PreparedStatement preparedStatement = connection.connection
+                            .prepareStatement("select * from admin_credentials where username = ? and password = ?");
                     preparedStatement.setString(1, uname);
                     preparedStatement.setString(2, passwd);
                     resultSet = preparedStatement.executeQuery();
@@ -62,7 +67,7 @@ public class loginPage {
                     }
                 }
             } catch (SQLException exception) {
-                JOptionPane.showMessageDialog(main,exception.getMessage());
+                JOptionPane.showMessageDialog(main, exception.getMessage());
                 usernameInput.setText("");
                 passwordInput.setText("");
                 frame.setVisible(false);
@@ -76,10 +81,9 @@ public class loginPage {
         frame.pack();
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.setSize(400,250);
+        frame.setSize(400, 250);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lock.png");
         frame.setIconImage(imageIcon);
         frame.setVisible(true);
     }
 }
-

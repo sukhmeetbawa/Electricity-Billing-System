@@ -14,7 +14,7 @@ public class connectToMySQL {
     public connectToMySQL() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:/"+ schema, "root", "password");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:/" + schema, "sukhmeet", "password");
             statement = connection.createStatement();
             System.out.println("CONNECTION ESTABLISHED");
         } catch (ClassNotFoundException | SQLException exception) {
@@ -22,4 +22,3 @@ public class connectToMySQL {
         }
     }
 }
-

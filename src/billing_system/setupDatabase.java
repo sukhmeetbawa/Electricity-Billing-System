@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class setupDatabase {
     static final String DB_URL = "jdbc:mysql://localhost/";
-    static final String USER = "root";
+    static final String USER = "sukhmeet";
     static final String PASS = "password";
     public static String schema = "electricity_billing_system";
 

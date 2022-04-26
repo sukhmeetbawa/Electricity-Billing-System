@@ -25,26 +25,32 @@ public class newCustomer implements showWindow {
                 String state = (String) stateInput.getSelectedItem();
                 String email = emailInput.getText();
                 String phone = phoneInput.getText();
-                try {
-                    connectToMySQL connection = new connectToMySQL();
-                    PreparedStatement preparedStatement = connection.connection.prepareStatement("insert into customer_info(name,meter,address,city,state,email,phone)values( ?, ?, ?, ?, ?, ?, ?)");
-                    preparedStatement.setString(1, name);
-                    preparedStatement.setString(2, meter);
-                    preparedStatement.setString(3, address);
-                    preparedStatement.setString(4, city);
-                    preparedStatement.setString(5, state);
-                    preparedStatement.setString(6, email);
-                    preparedStatement.setString(7, phone);
-                    preparedStatement.executeUpdate();
-                    JOptionPane.showMessageDialog(main, "NEW CUSTOMER REGISTERED");
-                    frame.setVisible(false);
+                if (phone.length() != 10) {
+                    JOptionPane.showMessageDialog(main, "Enter A Valid Phone Number");
+                    phoneInput.setText("");
+                    phoneInput.requestFocus();
+                } else {
+                    try {
+                        connectToMySQL connection = new connectToMySQL();
+                        PreparedStatement preparedStatement = connection.connection.prepareStatement("insert into customer_info(name,meter,address,city,state,email,phone)values( ?, ?, ?, ?, ?, ?, ?)");
+                        preparedStatement.setString(1, name);
+                        preparedStatement.setString(2, meter);
+                        preparedStatement.setString(3, address);
+                        preparedStatement.setString(4, city);
+                        preparedStatement.setString(5, state);
+                        preparedStatement.setString(6, email);
+                        preparedStatement.setString(7, phone);
+                        preparedStatement.executeUpdate();
+                        JOptionPane.showMessageDialog(main, "NEW CUSTOMER REGISTERED");
+                        frame.setVisible(false);
 
-                } catch (Exception exception) {
-                    throw new RuntimeException(exception);
+                    } catch (Exception exception) {
+                        JOptionPane.showMessageDialog(main,exception.getMessage());
+                        throw new RuntimeException(exception);
+                    }
                 }
-            }
-            else{
-                JOptionPane.showMessageDialog(main,"Select State");
+            } else {
+                JOptionPane.showMessageDialog(main, "Select State");
             }
         });
     }

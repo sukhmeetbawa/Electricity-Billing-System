@@ -22,12 +22,16 @@ public class taxEditor implements showWindow {
         connectToMySQL getData = new connectToMySQL();
         // Populate the Drop Menu for States
         placeSelector.addItem("SELECT STATE");
+        if (placeSelector.getItemCount() == 1)
+            placeSelector.setEnabled(false);
         try {
             ResultSet storeData = getData.statement.executeQuery("SELECT distinct state FROM customer_info");
             while (storeData.next()) placeSelector.addItem(storeData.getString("state"));
         } catch (SQLException exception) {
             throw new RuntimeException(exception);
         }
+        if (placeSelector.getItemCount() != 1)
+            placeSelector.setEnabled(true);
         submitButton.addActionListener(e -> {
             if (placeSelector.getSelectedIndex() != 0) {
                 try {
