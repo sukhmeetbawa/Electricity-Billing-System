@@ -8,8 +8,8 @@ import java.sql.Statement;
 import static billing_system.setupDatabase.schema;
 
 public class connectToMySQL {
-    Connection connection;
-    Statement statement;
+    public Connection connection;
+    public Statement statement;
 
     public connectToMySQL() {
         try {

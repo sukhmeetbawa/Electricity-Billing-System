@@ -40,12 +40,12 @@ public class generateBill implements showWindow {
                 if (getInfo.next()) {
                     state = getInfo.getString("state");
                     billInfo.append("Customer Name\t:\t" + getInfo.getString("name") + "\n");
-                    billInfo.append("Meter Number\t\t:\t" + getInfo.getString("meter") + "\n");
+                    billInfo.append("Meter Number\t:\t" + getInfo.getString("meter") + "\n");
                     billInfo.append("Address\t\t:\t" + getInfo.getString("address") + "\n");
                     billInfo.append("City\t\t:\t" + getInfo.getString("city") + "\n");
                     billInfo.append("State\t\t:\t" + getInfo.getString("state") + "\n");
                     billInfo.append("E-Mail\t\t:\t" + getInfo.getString("email") + "\n");
-                    billInfo.append("Phone Number\t\t:\t" + getInfo.getString("phone") + "\n");
+                    billInfo.append("Phone Number\t:\t" + getInfo.getString("phone") + "\n");
                     billInfo.append("\n\n\n");
                 }
                 int amount = 0;
@@ -53,26 +53,26 @@ public class generateBill implements showWindow {
                 if (getInfo.next()) amount = getInfo.getInt("amount");
                 getInfo = getData.statement.executeQuery("select * from tax where place='" + state + "'");
                 if (getInfo.next()) {
-                    billInfo.append("Meter Location\t\t:\t" + getInfo.getString("meter_location") + "\n");
-                    billInfo.append("Meter Type\t\t:\t" + getInfo.getString("meter_type") + "\n");
-                    billInfo.append("Phase Code\t\t:\t" + getInfo.getString("phase_code") + "\n");
-                    billInfo.append("Bill Type\t\t:\t" + getInfo.getString("bill_type") + "\n");
+                    billInfo.append("Meter Location\t:\t" + getInfo.getString("meter_location") + "\n");
+                    billInfo.append("Meter Type\t:\t" + getInfo.getString("meter_type") + "\n");
+                    billInfo.append("Phase Code\t:\t" + getInfo.getString("phase_code") + "\n");
+                    billInfo.append("Bill Type\t:\t" + getInfo.getString("bill_type") + "\n");
                     billInfo.append("Days\t\t:\t" + getInfo.getString("days") + "\n");
                     billInfo.append("\n\n\n");
-                    billInfo.append("Meter Rent\t\t:\t" + getInfo.getString("meter_rent") + "\n");
-                    billInfo.append("MCB Rent\t\t:\t" + getInfo.getString("mcb_rent") + "\n");
-                    billInfo.append("Service Tax\t\t:\t" + getInfo.getString("service_rent") + "\n");
+                    billInfo.append("Meter Rent\t:\t" + getInfo.getString("meter_rent") + "\n");
+                    billInfo.append("MCB Rent\t:\t" + getInfo.getString("mcb_rent") + "\n");
+                    billInfo.append("Service Tax\t:\t" + getInfo.getString("service_rent") + "\n");
                     billInfo.append("cGST@" + getInfo.getString("cgst") + "%\t\t:\t" + (getInfo.getInt("cgst") * amount / 100) + "\n");
-                    billInfo.append("sGST@" + getInfo.getString("sgst") + "%\t\t:\t" + (getInfo.getInt("sgst") * amount / 100) + "\n");
+                    billInfo.append("sGST@" + getInfo.getString("sgst") + "%\t\t:\t" + (getInfo.getInt("cgst") * amount / 100) + "\n");
                     billInfo.append("\n\n\n");
                 }
 
                 getInfo = getData.statement.executeQuery("select * from bill where meter_number='" + meter + "' and month='" + month + "'");
                 if (getInfo.next()) {
-                    billInfo.append("Meter Number\t\t:\t" + getInfo.getString("meter_number") + "\n");
+                    billInfo.append("Meter Number\t:\t" + getInfo.getString("meter_number") + "\n");
                     billInfo.append("Month\t\t:\t" + getInfo.getString("month") + "\n");
                     billInfo.append("Units Consumed\t:\t" + getInfo.getString("units") + "\n");
-                    billInfo.append("Total Charges\t\t:\t" + getInfo.getString("amount") + "\n");
+                    billInfo.append("Total Charges\t:\t" + getInfo.getString("amount") + "\n");
                 }
             } catch (SQLException exception) {
                 throw new RuntimeException(exception);
@@ -94,7 +94,7 @@ public class generateBill implements showWindow {
     public void drawWindow(JFrame frame) {
         frame.setContentPane(new generateBill().main);
         frame.pack();
-        frame.setSize(500, 900);
+        frame.setSize(450, 600);
         frame.setLocationRelativeTo(null);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);

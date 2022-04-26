@@ -1,4 +1,4 @@
-import billing_system.loginPage;
+import billing_system.user_management.loginPage;
 import billing_system.setupDatabase;
 
 import javax.swing.*;

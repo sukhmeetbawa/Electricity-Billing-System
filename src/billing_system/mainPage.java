@@ -1,5 +1,7 @@
 package billing_system;
 
+import billing_system.user_management.loginPage;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -50,7 +52,7 @@ public class mainPage implements showWindow {
         frame.setContentPane(new mainPage().main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(600, 400);
+        frame.setSize(400, 250);
 //        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");

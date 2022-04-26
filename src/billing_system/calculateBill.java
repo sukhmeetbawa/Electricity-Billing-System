@@ -32,7 +32,7 @@ public class calculateBill implements showWindow {
                 String units = unitsConsumed.getText();
                 String month = (String) monthMenu.getSelectedItem();
                 int unitsInInteger = Integer.parseInt(units);
-                int amount = 0;
+                int amount;
                 try {
                     ResultSet tax = connect.statement.executeQuery("select * from customer_info where meter='" + meterNumber + "'");
                     if (tax.next()) {
