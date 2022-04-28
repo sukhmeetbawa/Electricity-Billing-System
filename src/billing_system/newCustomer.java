@@ -23,7 +23,7 @@ public class newCustomer implements showWindow {
             String phone = phoneInput.getText();
             String emailRegex = "^[a-zA-Z\\d_+&*-]+(?:\\.[a-zA-Z\\d_+&*-]+)*@(?:[a-zA-Z\\d-]+\\.)+[a-zA-Z]{2,7}$";
             if (stateInput.getSelectedIndex() == 0 | !(Pattern.compile(emailRegex).matcher(email).matches()) | phone.length() != 10 | !meterInput.getText().matches("\\d+") | !phoneInput.getText().matches("\\d+")) {
-                if (stateInput.getSelectedIndex() == 0){
+                if (stateInput.getSelectedIndex() == 0) {
                     JOptionPane.showMessageDialog(main, "Select A State");
                 }
                 if (!(Pattern.compile(emailRegex).matcher(email).matches())) {
@@ -36,8 +36,7 @@ public class newCustomer implements showWindow {
                     phoneInput.setText("");
                     phoneInput.requestFocus();
                 }
-                if (!meterInput.getText().matches("\\d+"))
-                {
+                if (!meterInput.getText().matches("\\d+")) {
                     JOptionPane.showMessageDialog(main, "Enter A Valid Meter Number");
                     phoneInput.setText("");
                     phoneInput.requestFocus();
@@ -66,9 +65,11 @@ public class newCustomer implements showWindow {
     }
 
     public void drawWindow(JFrame frame) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setContentPane(new newCustomer(frame).main);
         frame.pack();
-        frame.setSize(500, 500);
+        frame.setSize(screenSize.width / 4, screenSize.height / 2);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");

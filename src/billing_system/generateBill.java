@@ -92,9 +92,11 @@ public class generateBill implements showWindow {
     }
 
     public void drawWindow(JFrame frame) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setContentPane(new generateBill().main);
         frame.pack();
-        frame.setSize(450, 600);
+        frame.setSize(screenSize.width / 4, screenSize.height / 2);
         frame.setLocationRelativeTo(null);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);

@@ -18,7 +18,6 @@ public class mainPage implements showWindow {
     public mainPage() {
         newCustomerButton.addActionListener(e -> {
             System.out.println("ADDING NEW CUSTOMER");
-            JOptionPane.showMessageDialog(main, "ADDING NEW CUSTOMER");
             newCustomer newCustomer = new newCustomer(null);
             newCustomer.drawWindow(new JFrame("Add Customer"));
         });
@@ -39,8 +38,8 @@ public class mainPage implements showWindow {
             generateBill.drawWindow(new JFrame("Generate Bill"));
         });
         addAdminButton.addActionListener(e -> {
-            loginPage loginPage = new loginPage(null,true);
-            loginPage.drawWindow(new JFrame("New Admin"),true);
+            loginPage loginPage = new loginPage(null, true);
+            loginPage.drawWindow(new JFrame("New Admin"), true);
         });
         changeTaxesButton.addActionListener(e -> {
             taxEditor taxEditor = new taxEditor(null);
@@ -49,11 +48,11 @@ public class mainPage implements showWindow {
     }
 
     public void drawWindow(JFrame frame) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setContentPane(new mainPage().main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(400, 250);
-//        frame.setResizable(false);
+        frame.setSize(screenSize.width / 4, screenSize.height / 3);
         frame.setLocationRelativeTo(null);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);

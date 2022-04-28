@@ -63,8 +63,8 @@ public class taxEditor implements showWindow {
                 } catch (SQLException exception) {
                     throw new RuntimeException(exception);
                 }
-            }else {
-                JOptionPane.showMessageDialog(main,"Select State First");
+            } else {
+                JOptionPane.showMessageDialog(main, "Select State First");
             }
         });
         placeSelector.addActionListener(e -> {
@@ -96,10 +96,11 @@ public class taxEditor implements showWindow {
 
     @Override
     public void drawWindow(JFrame frame) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setContentPane(new taxEditor(frame).main);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
-        frame.setSize(400, 500);
+        frame.setSize(screenSize.width / 4, screenSize.height / 2);
         frame.setLocationRelativeTo(null);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lightning.png");
         frame.setIconImage(imageIcon);

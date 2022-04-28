@@ -85,7 +85,9 @@ public class calculateBill implements showWindow {
     }
 
     public void drawWindow(JFrame frame) {
-        frame.setSize(470, 350);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setSize(screenSize.width / 4, screenSize.height / 4);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setContentPane(new calculateBill(frame).main);
         frame.pack();
         frame.setResizable(false);

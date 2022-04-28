@@ -56,14 +56,16 @@ public class loginPage {
     }
 
     public void drawWindow(JFrame frame, boolean newUser) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setContentPane(new loginPage(frame, newUser).main);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        if (!newUser)
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
-        frame.setSize(300, 200);
+        frame.setSize(screenSize.width / 4, screenSize.height / 4);
         Image imageIcon = Toolkit.getDefaultToolkit().getImage("./icons/lock.png");
         frame.setIconImage(imageIcon);
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
     }
 }

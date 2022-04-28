@@ -22,7 +22,7 @@
         </constraints>
         <properties>
           <font name="Consolas" size="36" style="0"/>
-          <text value="🔒 LOGIN"/>
+          <text value="LOGIN"/>
         </properties>
       </component>
       <component id="2a3a1" class="javax.swing.JLabel">
@@ -30,7 +30,7 @@
           <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="👤 Username"/>
+          <text value="Username"/>
         </properties>
       </component>
       <component id="ee323" class="javax.swing.JLabel">
@@ -38,7 +38,7 @@
           <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="🔑 Password"/>
+          <text value="Password"/>
         </properties>
       </component>
       <component id="b47cb" class="javax.swing.JTextField" binding="usernameInput">
