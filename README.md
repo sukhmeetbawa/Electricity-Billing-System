@@ -34,19 +34,19 @@ Electricity Billing System is a software-based application developed in Java pro
 
 # Output
 
-- Login Screen
+- Login Screen\
     ![alt text](./screenshots/login-screen.png)
-- Home Page
+- Home Page\
     ![alt text](./screenshots/home-page.png)
-- New User Details
+- New User Details\
     ![alt text](./screenshots/new-user-details.png)
-- Calculate Bill
+- Calculate Bill\
     ![alt text](./screenshots/calculate-bill.png)
-- Customer Details
+- Customer Details\
     ![alt text](./screenshots/customer-details.png)
-- Generate Bill
+- Generate Bill\
     ![alt text](./screenshots/generate-bill.png)
-- Tax Editor
+- Tax Editor\
     ![alt text](./screenshots/tax-editor.png)
-- Add Admin
+- Add Admin\
     ![alt text](./screenshots/add-admin.png)
