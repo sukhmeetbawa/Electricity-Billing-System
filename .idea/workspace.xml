@@ -76,16 +76,25 @@
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "395",
+    "WebServerToolWindowFactoryState": "false",
     "last.edited.regexp": "Sample Text",
-    "last_opened_file_path": "/mnt/data/Code/Java/Java_Project",
+    "last_opened_file_path": "/mnt/data/Projects/Electricity-Billing-System/src/billing_system/user_management",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.editor"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/billing_system/user_management" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/billing_system/user_management" />
       <recent name="D:\Code\Java\Java_Project\src\billing_system\user_management" />
       <recent name="D:\Code\Java\Java_Project\icons" />
     </key>
@@ -126,6 +135,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650536769197</updated>
+      <workItem from="1660902472177" duration="1068000" />
+      <workItem from="1660903712449" duration="517000" />
+      <workItem from="1660904251313" duration="994000" />
+      <workItem from="1660914206932" duration="114000" />
+      <workItem from="1660917590976" duration="362000" />
+      <workItem from="1660974276567" duration="1233000" />
+      <workItem from="1660980632488" duration="2668000" />
     </task>
     <task id="LOCAL-00001" summary="MVP Made">
       <created>1650661461629</created>
@@ -235,6 +251,9 @@
     <option name="localTasksCounter" value="16" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -273,6 +292,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Java_Project$mainProgram.ic" NAME="mainProgram Coverage Results" MODIFIED="1650805675471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -7,14 +7,14 @@ import java.sql.Statement;
 
 public class setupDatabase {
     static final String DB_URL = "jdbc:mysql://localhost/";
-    static final String USER = "sukhmeet";
-    static final String PASS = "password";
+    public static String USER = "root";
+    public static String PASS = "root";
     public static String schema = "electricity_billing_system";
 
-    public static void  main(String[] args) {
+    public static void init() {
         // Open a connection
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASS); Statement statement = connection.createStatement()) {
-            // Create a new database java_project
+            // Create a new database electricity_billing_system
             String sql = "CREATE DATABASE `" + schema + "`";
             statement.executeUpdate(sql);
             System.out.println("Database " + schema + " created");
