@@ -6,10 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class setupDatabase {
+    public static String USER = null;
     static final String DB_URL = "jdbc:mysql://localhost/";
-    public static String USER = "root";
-    public static String PASS = "root";
+   public static String PASS;
     public static String schema = "electricity_billing_system";
+
 
     public static void init() {
         // Open a connection
@@ -20,7 +21,7 @@ public class setupDatabase {
             System.out.println("Database " + schema + " created");
             sql = "CREATE TABLE `" + schema
                     + "`.`admin_credentials` (" + "  `username` VARCHAR(45) NOT NULL,"
-                    + "  `password` VARCHAR(45) NOT NULL," + "  PRIMARY KEY (`username`)," + "  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE);";
+                    + "  `password` VARCHAR(255) NOT NULL," + "  PRIMARY KEY (`username`)," + "  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE);";
             statement.executeUpdate(sql);
             System.out.println("Table admin_credential created");
             sql = "CREATE TABLE `" + schema

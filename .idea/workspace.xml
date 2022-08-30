@@ -9,29 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="and final we are done">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Java_Project_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Java_Project_jar.xml" afterDir="false" />
+    <list default="true" id="486def81-dd67-4167-a449-07aa0b5460b5" name="Changes" comment="Add support for a config file which is used to store MySQL Credentials">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/billing_system/passwordGeneration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java_Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/calculateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/calculateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/customerDetails.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/customerDetails.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/generateBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/generateBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/mainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/newCustomer.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/newCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/newCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/connectToMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/setupDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/setupDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/taxEditor.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxEditor.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/taxEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/taxEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/user_management/createAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/user_management/createAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/user_management/loginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/user_management/loginPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/billing_system/user_management/loginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/user_management/loginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/billing_system/user_management/loginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/billing_system/user_management/loginUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainProgram.java" afterDir="false" />
     </list>
@@ -78,7 +64,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "395",
     "WebServerToolWindowFactoryState": "false",
     "last.edited.regexp": "Sample Text",
-    "last_opened_file_path": "/mnt/data/Projects/Electricity-Billing-System/src/billing_system/user_management",
+    "last_opened_file_path": "/mnt/data/Projects/Electricity-Billing-System",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,7 +72,12 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "project.propGUI"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -120,9 +111,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="shaGeneration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="billing_system.shaGeneration" />
+      <module name="Java_Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="billing_system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.mainProgram" />
+        <item itemvalue="Application.shaGeneration" />
         <item itemvalue="Application.setupDatabase" />
       </list>
     </recent_temporary>
@@ -142,6 +147,7 @@
       <workItem from="1660917590976" duration="362000" />
       <workItem from="1660974276567" duration="1233000" />
       <workItem from="1660980632488" duration="2668000" />
+      <workItem from="1661832402874" duration="3566000" />
     </task>
     <task id="LOCAL-00001" summary="MVP Made">
       <created>1650661461629</created>

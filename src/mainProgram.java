@@ -35,8 +35,8 @@ public class mainProgram {
         }
         FileReader reader = new FileReader(configFile);
         properties.load(reader);
-        connectToMySQL.USER = properties.getProperty("USERNAME");
-        connectToMySQL.PASS = properties.getProperty("PASSWORD");
+        setupDatabase.USER  = properties.getProperty("USERNAME");
+        setupDatabase.PASS = properties.getProperty("PASSWORD");
 
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         loginPage loginPage = new loginPage(null, false);
